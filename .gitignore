@@ -1,0 +1,8 @@
+test_images/
+build/
+*.out
+compile_commands.json
+.clangd
+*.log
+.idea/
+cmake-build-debug/
