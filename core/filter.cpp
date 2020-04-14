@@ -37,7 +37,7 @@ auto make_predicate(const FilterRules& filter)
 	};
 }
 
-template <class T, typename Func>
+template <typename T, typename Func>
 std::vector<T> filter(const Func& pred, const std::vector<T>& input)
 {
 	std::vector<T> result;
