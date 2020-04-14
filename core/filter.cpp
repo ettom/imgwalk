@@ -12,13 +12,13 @@
 auto make_predicate(const FilterRules& filter)
 {
 	return [&](const ImgFile& img) {
-		bool filename_matches = !filter.filename.has_value(); // if no value was provided, it always matches
-		bool camera_model_matches = !filter.camera_model.has_value();
-		bool capture_date_matches = !filter.capture_date.has_value();
-
 		if (!img.exif_found && filter.ignore_files_without_exif) {
 			return false;
 		}
+
+		bool filename_matches = !filter.filename.has_value(); // if no value was provided, it always matches
+		bool camera_model_matches = !filter.camera_model.has_value();
+		bool capture_date_matches = !filter.capture_date.has_value();
 
 		// |= does not work as it isn't lazy
 		filename_matches =
